@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Fonts - Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;900&display=swap" rel="stylesheet">
+    <!-- Referência ao arquivo de estilos que será criado -->
+    <link rel="stylesheet" href="style.css">
+    <title>Beabá do Marketing</title>
+</head>
+<body>
+        <header>
+          <h1>Beabá do Marketing</h1>
+        <button class="menu-toggle" aria-label="Abrir Menu">
+          <span class="hamburger"></span>
+        </button>
+        <nav class="header-nav-mobile-content">
+          <div class="filtros-container">
+            <select id="filtro-categoria">
+              <option value="">Todas as Categorias</option>
+            </select>
+            <select id="filtro-nivel">
+              <option value="">Todos os Níveis</option>
+            </select>
+          </div>
+          <div>
+            <!-- Campo de busca ajustado para o contexto de marketing -->
+            <input id="input-busca" type="text" placeholder="Digite um termo (ex: SEO, CAC, Funil)">
+            <button id="botao-busca" onclick="iniciarBusca()">Buscar</button>
+            <button id="botao-limpar" style="display: none;">Limpar</button>
+          </div>
+        </nav>
+        </header>
+
+    <main>
+        <p class="intro-text">O Beabá do Marketing é a sua ferramenta essencial para descomplicar a linguagem do Marketing Digital. Se você se sente perdido com termos como SEO, CAC, LTV ou Funil de Vendas, esta ferramenta foi feita para você.</p>
+        <section id="card-container" class="card-container">
+            <!-- Cards dos Termos de Marketing serão injetados aqui pelo JavaScript -->
+            <!-- Exemplo de como um card será (comentado) -->
+            <!-- 
+            <article class="card">
+                <h2>1. Funil de Marketing</h2>
+                <p class="analogia">Analogia: Uma peneira...</p>
+                <p class="explicacao">Modelo estratégico que mapeia a jornada do cliente...</p>
+                <div class="tags">
+                    <span class="tag">ESTRATÉGIA</span>
+                    <span class="tag">FUNIL</span>
+                </div>
+                <a href="LINK_YOUTUBE" target="_blank">Ver no YouTube</a>
+            </article>
+            -->
+        </section>
+        
+        <!-- Mensagem para quando não houver resultados na busca -->
+        <div id="mensagem-resultado" class="mensagem-resultado" style="display: none;">
+            Nenhum termo encontrado. Tente outra palavra-chave.
+        </div>
+    </main>
+    
+        <template id="card-template">
+            <article class="card">
+                            <h2 data-termo></h2>
+                            <div class="meta-info">
+                                <span class="card-badge card-badge-categoria" data-categoria></span>
+                                <span class="card-badge card-badge-nivel" data-nivel></span>
+                            </div>
+                                                    <details class="card-section" open>
+                                                        <summary class="card-summary">Analogia</summary>
+                                                        <p class="analogia" data-analogia></p>
+                                                    </details>                            <details class="card-section">
+                                <summary class="card-summary">Explicação</summary>
+                                <p class="explicacao" data-explicacao></p>
+                            </details>
+                            <details class="card-section">
+                                <summary class="card-summary">Exemplo Prático</summary>
+                                <p class="exemplo-pratico" data-exemplo-pratico></p>
+                            </details>
+                            <details class="card-section">
+                                <summary class="card-summary">Erro Comum</summary>
+                                <p class="erro-comum" data-erro-comum></p>
+                            </details>
+                            <div class="tags" data-tags></div>                
+                            <a href="#" class="learn-more-link" data-link-youtube style="display: none;">Ver no YouTube</a> <!-- YouTube link will still be hidden by default -->
+                            <button class="aprende-agora-btn">Aprenda agora</button>
+            </article>
+        </template>
+    
+        <footer class="footer">
+            <ul class="footer-links">
+                <li>
+                    <a href="https://deslanchar.online" target="_blank">Deslanchar Online</a>
+                </li>
+                <li>
+                    <!-- Manter links de apoio ou parceiros se desejar -->
+                    <a href="https://www.linkedin.com/in/robsonbbarbosa/" target="_blank">Robson Barbosa</a>
+                </li>
+            </ul>
+            </footer>
+            
+            <!-- Modal Structure for Card Details -->
+            <div id="card-detail-modal" class="modal">
+                <div class="modal-overlay"></div>
+                <div class="modal-content">
+                    <button class="modal-close">&times;</button>
+                    <div id="modal-card-body">
+                        <!-- Full card details will be injected here by JavaScript -->
+                        <!-- The content will mirror the original card structure -->
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Referência ao arquivo JavaScript que será criado -->
+            <script src="script.js"></script>
+        </body></html>
